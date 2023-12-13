@@ -1,0 +1,1 @@
+web: gunicorn tas.wsgi --log-file -
