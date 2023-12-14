@@ -15,3 +15,9 @@ def upload(request):
     
     return render (request,"base/upload.html")
 
+
+
+def display_records(request):
+    records = upload.objects.all()
+    return render (request,"warehouse/records.html",{'records':records})
+

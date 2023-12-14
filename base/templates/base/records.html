@@ -1,0 +1,26 @@
+<!-- records.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Records Table</title>
+</head>
+<body>
+    <h1>Records Table</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in records %}
+                <tr>
+                    <td>{{ record.information }}</td>
+                    <td>{{ record.file }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
