@@ -1,7 +1,17 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
+from .models import *
 
 # Create your views here.
 
 def home(request):
     return render(request,'base/home.html')
+
+def upload(request):
+    if request.method == "POST":
+        uploadfile = request.FILES["file"]
+        document = fileupload.objects.create(file=uploadfile)
+        document.save()
+        return HttpResponse("Your file as uploaded")
     
+    return render (request,"base/upload.html")
+
