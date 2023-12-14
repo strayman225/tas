@@ -8,8 +8,8 @@ from django.views.static import serve
 
 urlpatterns = [
 
-    path('', home, name='home_html'),
-    path('upload', upload, name='fileupload_html'),
+    path('', upload, name='home_html'),
+    path('upload/', uploadfile, name='fileupload_html'),
     path('records/', display_records, name='display_records'),
     re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),    
 
